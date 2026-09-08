@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🛡️ SentinelOne PhishBlocker | Enterprise Security</title>
+  <link rel="stylesheet" href="/static/styles.css?v=mobile2">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- Live Background -->
+  <div class="animated-bg"></div>
+  <div class="mesh-gradient"></div>
+
+  <div class="app-container">
+    <!-- Navigation -->
+    <nav class="navbar glass">
+      <div class="nav-content">
+        <div class="logo">
+          <div class="logo-icon">
+            <i class="fas fa-shield-virus"></i>
+          </div>
+          <span>Sentinel<span class="highlight">One</span></span>
+        </div>
+        <div class="nav-links">
+          <a href="#" class="active">Scanner</a>
+          <a href="#history-section">History</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="main-content">
+      <div class="hero-section">
+        <div class="hero-text">
+          <div class="badge-pill">
+            <span class="dot"></span> AI-Powered Protection v2.0
+          </div>
+          <h1>Secure Your Digital <br /><span class="text-gradient">Footprint</span></h1>
+          <p class="hero-subtitle">Advanced machine learning algorithms detect and block sophisticated phishing attacks,
+            homograph spoofing, and zero-day threats in milliseconds.</p>
+
+        </div>
+
+        <!-- Scanner Card -->
+        <div class="scanner-wrapper">
+          <div class="scanner-card glass-panel">
+            <div class="card-header">
+              <div class="header-icon">
+                <i class="fas fa-search-location"></i>
+              </div>
+              <div>
+                <h2>URL Intelligence Scanner</h2>
+                <p>Deep analysis engine</p>
+              </div>
+            </div>
+
+            <div class="input-container">
+              <div class="input-box glass-input">
+                <i class="fas fa-globe input-icon"></i>
+                <input type="text" id="urlInput" placeholder="Enter suspicious URL to analyze..." autocomplete="off">
+                <button id="clearBtn" class="icon-btn hidden"><i class="fas fa-times"></i></button>
+              </div>
+              <button id="scanBtn" class="cta-btn" onclick="scanUrl()">
+                <span>Scan Now</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <div class="quick-actions">
+              <span>Test with samples:</span>
+              <div class="action-buttons">
+                <button onclick="testUrl('https://www.google.com')" class="sample-btn safe" title="Test Safe URL"><i
+                    class="fas fa-check"></i> Safe</button>
+                <button onclick="testUrl('http://paypal.secure-login.com')" class="sample-btn danger"
+                  title="Test Phishing URL"><i class="fas fa-bug"></i> Phish</button>
+              </div>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div id="loadingContainer" class="loading-overlay hidden">
+              <div class="loader-content">
+                <div class="radar-spinner"></div>
+                <div class="scanning-text">Running Heuristic Analysis...</div>
+                <div class="scan-steps">
+                  <div class="step" id="step1"><i class="fas fa-check"></i> DNS Resolution</div>
+                  <div class="step" id="step2"><i class="fas fa-circle-notch fa-spin"></i> SSL Inspection</div>
+                  <div class="step" id="step3"><i class="far fa-circle"></i> ML Model Inference</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Results Area -->
+            <div id="resultsContainer" class="results-area hidden">
+              <!-- Injected by JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard / Stats Section -->
+      <!-- Recent Scans History -->
+      <section id="history-section" class="dashboard-section">
+        <h2 class="section-title"><i class="fas fa-history"></i> Recent Scans</h2>
+        <div class="glass-panel history-container">
+          <div class="history-header">
+            <span>URL</span>
+            <span>Result</span>
+            <span>Time</span>
+          </div>
+          <div id="scanHistoryList" class="history-list">
+            <!-- Populated by JS -->
+            <div class="empty-history">
+              <i class="fas fa-list-ul"></i>
+              <p>No recent scans yet.</p>
+            </div>
+          </div>
+          <div class="history-actions">
+            <button id="clearHistoryBtn" class="text-btn">Clear History</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="glass-footer">
+      <div class="footer-content">
+        <p>&copy; 2025 SentinelOne PhishBlocker. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/script.js?v=final4"></script>
+  </script>
+</body>
+
+</html>
